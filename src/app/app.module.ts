@@ -13,11 +13,9 @@ import { ActionButtonGroupComponent } from './common/action-button-group/action-
 import { DataCellComponent } from './common/data-cell/data-cell.component';
 import { DataRowComponent } from './common/data-row/data-row.component';
 import { DataListComponent } from './common/data-list/data-list.component';
-import { UserServiceComponent } from './common/user-service/user-service.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
     UserDetailComponent,
     UserListComponent,
     FilterPipe,
@@ -28,7 +26,6 @@ import { UserServiceComponent } from './common/user-service/user-service.compone
     DataCellComponent,
     DataRowComponent,
     DataListComponent,
-    UserServiceComponent,
   ],
   imports: [
     BrowserModule,

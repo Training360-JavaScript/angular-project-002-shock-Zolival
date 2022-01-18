@@ -1,10 +1,12 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Output } from '@angular/core';
 import { User } from '../model/user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+
+  // @Output() Injectable: EventEmitter<>
 
   private dataList: User[] = [{
     id: 1,

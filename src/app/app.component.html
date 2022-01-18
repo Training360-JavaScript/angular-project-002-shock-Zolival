@@ -65,6 +65,7 @@
         class="form-control mr-sm-2"
         type="text"
         placeholder="Search"
+        (keyup)="onChangePhrase($event)"
       >
       <button
         class="btn btn-outline-success my-2 my-sm-0"
@@ -76,9 +77,18 @@
 <div class="container">
   <div class="row">
     <div class="col-8">
+      <app-data-list
+      (selectClick)="onSelectClick($event)"
+      (updateClick)="onUpdateClick($event)"
+      (deleteClick)="onDeleteClick($event)"
+      [dataList]="user"
+      ></app-data-list>
       ...
     </div>
     <div class="col-4">
+      <app-user-detail
+      (click)="onDelete(user)"
+      ></app-user-detail>
       ...
     </div>
   </div>
