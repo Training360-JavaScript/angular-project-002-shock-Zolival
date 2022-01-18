@@ -16,7 +16,7 @@ export class DataRowComponent implements OnInit {
 
 
 onSelectClicked(): void {
-  this.selectClick.emit(this.dataRow);
+  this.selectClick.emit(this.dataRow)
 }
 
 onUpdateClicked(): void {
@@ -29,7 +29,7 @@ onDeleteClicked(): void {
 
 constructor() { }
 
-  ngOnInit(): void {
-  }
+ngOnInit(): void {
+}
 
 }
