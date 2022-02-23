@@ -1,4 +1,4 @@
-import { Component, Injectable, Input } from '@angular/core';
+import { Component, EventEmitter, Injectable, Input } from '@angular/core';
 import { User } from './model/user';
 import { UserService } from './service/user.service';
 
@@ -9,30 +9,36 @@ import { UserService } from './service/user.service';
   styleUrls: ['./app.component.scss']
 })
 
-@Injectable({
-  providedIn: 'root',
-})
 
 export class AppComponent {
-
-  @Input() users: User = new User();
-  @Input() currentUser: User = new User();
-
-  userSelect(): void {
-    this.currentUser.emit()
-  }
-
-  updateUser(): void {
-    this.updateUser();
-  }
-
-  removeUser(): void {
-    this.removeUser();
-  }
-
-
   title = 'The good Angular programmer';
 
-  constructor() {}
+
+  @Input() phrase: EventEmitter<KeyboardEvent> = new EventEmitter();
+
+  userList: User[] = this.userService.list;
+  currentUser!: User;
+
+  selectUser(user: User): void {
+    this.currentUser = user;
+  }
+
+  updateUser(user: User): void {
+    this.userService.updateUser(user);
+  }
+
+  removeUser(user: User): void {
+    this.currentUser.removeUser(user);
+  }
+
+  onChangePhrase(phrase: KeyboardEvent) : void {
+    console.log(phrase)
+  }
+
+
+
+  constructor(
+    private userService: UserService
+  ) {}
 
 }
