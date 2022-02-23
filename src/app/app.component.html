@@ -79,6 +79,7 @@
 
       <app-data-list
       [dataList]="userList"
+      *ngIf="userList"
       (selectClick)="selectUser($event)"
       (updateClick)="updateUser($event)"
       (deleteClick)="removeUser($event)"
